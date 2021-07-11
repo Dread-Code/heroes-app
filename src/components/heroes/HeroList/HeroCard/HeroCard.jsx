@@ -10,7 +10,7 @@ export const HeroCard = ({
   characters,
 }) => {
   return (
-    <div class="col">
+    <div className="col">
       <div className="card" style={{ maxWidth: 540 }}>
         <Link to={`/hero/${id}`}>
           <img
@@ -19,9 +19,9 @@ export const HeroCard = ({
             alt={superhero}
           />
         </Link>
-        <div class="card-body">
-          <h5 class="card-title">{superhero}</h5>
-          <p class="card-text">
+        <div className="card-body">
+          <h5 className="card-title">{superhero}</h5>
+          <p className="card-text">
             <strong>Alter ego: </strong> {alter_ego}
           </p>
           {alter_ego !== characters && (
@@ -29,10 +29,10 @@ export const HeroCard = ({
               <strong>Characters: </strong> {characters}
             </p>
           )}
-          <p class="card-text">
+          <p className="card-text">
             <strong style={{ fontSize: "2em" }}>{publisher}</strong>
             <br />
-            <small class="text-muted">{first_appearance}</small>
+            <small className="text-muted">{first_appearance}</small>
           </p>
         </div>
       </div>

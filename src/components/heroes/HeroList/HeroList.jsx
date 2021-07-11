@@ -5,9 +5,9 @@ import { HeroCard } from "./HeroCard/HeroCard";
 export const HeroList = ({ publisher }) => {
   const heroes = getHeroesByPublisher(publisher);
   return (
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div className="row row-cols-1 row-cols-md-3 g-4">
       {heroes.map((hero) => (
-        <HeroCard {...hero} />
+        <HeroCard key={hero.id} {...hero} />
       ))}
     </div>
   );
