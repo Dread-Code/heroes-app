@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { AuthContext } from "../../auth/AuthContext";
 import { LOGIN } from "../../types/types";
 
-export const LoginScreen = () => {
+export const LoginScreen = ({ history }) => {
   const { dispatch } = useContext(AuthContext);
 
   /**
@@ -15,7 +15,6 @@ export const LoginScreen = () => {
     // history.push("/");
     // replace remplaza el layout y no permitira volver
     // a atras al mismo layout
-    // history.replace("/");
     dispatch({
       type: LOGIN,
       payload: {
@@ -24,6 +23,7 @@ export const LoginScreen = () => {
         id: 23,
       },
     });
+    history.replace("/");
   };
 
   return (
