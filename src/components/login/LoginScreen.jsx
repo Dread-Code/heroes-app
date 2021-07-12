@@ -11,6 +11,8 @@ export const LoginScreen = ({ history }) => {
    * o de react.router
    */
   const handleLOgin = () => {
+    const lastPath = localStorage.getItem("lastpath") || "/";
+
     // push nos redrecciona a una de las rutas
     // history.push("/");
     // replace remplaza el layout y no permitira volver
@@ -23,7 +25,7 @@ export const LoginScreen = ({ history }) => {
         id: 23,
       },
     });
-    history.replace("/");
+    history.replace(lastPath);
   };
 
   return (
