@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import { AuthContext } from "../../auth/AuthContext";
 import { LOGIN } from "../../types/types";
 
-export const LoginScreen = ({ history }) => {
-  const { user, dispatch } = useContext(AuthContext);
+export const LoginScreen = () => {
+  const { dispatch } = useContext(AuthContext);
 
   /**
    * History es un propiedad que nos ayuda
