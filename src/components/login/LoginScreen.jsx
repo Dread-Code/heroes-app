@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../auth/AuthContext";
+import { LOGIN } from "../../types/types";
 
 export const LoginScreen = ({ history }) => {
+  const { user, dispatch } = useContext(AuthContext);
+
   /**
    * History es un propiedad que nos ayuda
    * a accesader a ciertos metodos de nuestro navegador
@@ -8,10 +12,18 @@ export const LoginScreen = ({ history }) => {
    */
   const handleLOgin = () => {
     // push nos redrecciona a una de las rutas
-    history.push("/");
+    // history.push("/");
     // replace remplaza el layout y no permitira volver
     // a atras al mismo layout
-    history.replace("/");
+    // history.replace("/");
+    dispatch({
+      type: LOGIN,
+      payload: {
+        name: "Lucas",
+        email: "lucas@gmail.com",
+        id: 23,
+      },
+    });
   };
 
   return (
