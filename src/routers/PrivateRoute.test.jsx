@@ -10,6 +10,12 @@ describe("PrivateRoute", () => {
     },
   };
 
+  /**
+   * !Mocking the local storage
+   *
+   */
+  Storage.prototype.setItem = jest.fn();
+
   test("should return the component if is auth", () => {
     /**
      * The MemoryRouter is a HOC that help us
@@ -25,5 +31,6 @@ describe("PrivateRoute", () => {
       </MemoryRouter>
     );
     expect(wrapper.find("span").exists()).toBe(true);
+    expect(localStorage.setItem).toHaveBeenCalledWith("lastpath", "/marvel");
   });
 });
