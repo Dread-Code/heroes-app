@@ -33,4 +33,17 @@ describe("PrivateRoute", () => {
     expect(wrapper.find("span").exists()).toBe(true);
     expect(localStorage.setItem).toHaveBeenCalledWith("lastpath", "/marvel");
   });
+
+  test("should block the component if is nor auth", () => {
+    const wrapper = mount(
+      <MemoryRouter>
+        <PrivateRoute
+          isAuthenticated={false}
+          component={() => <span>Listo</span>}
+          {...props}
+        />
+      </MemoryRouter>
+    );
+    expect(wrapper.html()).toBe("");
+  });
 });
