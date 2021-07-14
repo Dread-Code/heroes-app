@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeroScreen should match snapshoot if there isn't URL arguments 1`] = `""`;
+
+exports[`HeroScreen should render a hero if the parameter it\`s find  1`] = `
+<div
+  className="row mt-5"
+>
+  <div
+    className="col-4"
+  >
+    <img
+      alt="Spider Man"
+      className="img-thumbnail animate__animated animate__fadeInLeft"
+      src="../assets/heroes/marvel-spider.jpg"
+    />
+  </div>
+  <div
+    className="animate__animated animate__fadeIn col-8"
+  >
+    <h3>
+      Spider Man
+    </h3>
+    <ul
+      className="list-group list-group.flush"
+    >
+      <li
+        className="list-group-item"
+      >
+        <b>
+          Alter ego: 
+        </b>
+         
+        Peter Parker
+      </li>
+      <li
+        className="list-group-item"
+      >
+        <b>
+          Publishe: 
+        </b>
+         
+        Marvel Comics
+      </li>
+      <li
+        className="list-group-item"
+      >
+        <b>
+          First appearence: 
+        </b>
+         
+        Amazing Fantasy #15
+      </li>
+    </ul>
+    <h5>
+      Characters
+    </h5>
+    <p>
+      Peter Parker
+    </p>
+    <button
+      className="btn btn-outline-info"
+      onClick={[Function]}
+    >
+      return
+    </button>
+  </div>
+</div>
+`;

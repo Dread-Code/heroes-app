@@ -8,8 +8,7 @@ export const HeroScreen = ({ history }) => {
   const hero = useMemo(() => getHeroesById(heroId)[0], [heroId]);
 
   // const hero = getHeroesById(heroId)[0];
-
-  if (!hero === 0) {
+  if (!hero) {
     return <Redirect to="/marvel" />;
   }
 
@@ -19,8 +18,9 @@ export const HeroScreen = ({ history }) => {
   const handleReturn = () => {
     if (history.length <= 2) {
       history.push("/");
+    } else {
+      history.goBack();
     }
-    history.goBack();
   };
 
   return (
