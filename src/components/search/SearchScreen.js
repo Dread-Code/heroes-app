@@ -7,10 +7,11 @@ import { getHeroesByName } from "../../selectors/getHeroesByName";
 
 export const SearchScreen = ({ history }) => {
   const location = useLocation();
+
   const { q = "" } = parse(location.search);
 
   const [values, handleInputChange, reset] = useForm({
-    search: "",
+    search: q,
   });
 
   const heroesFiltered = useMemo(() => getHeroesByName(q), [q]);
@@ -64,7 +65,7 @@ export const SearchScreen = ({ history }) => {
             style={{}}
           >
             {heroesFiltered.map((hero) => (
-              <HeroCard {...hero} />
+              <HeroCard key={hero.id} {...hero} />
             ))}
           </div>
         </div>
